@@ -103,7 +103,7 @@ var carDetails = {
 */
 
 //Code Here
-let{color,make,model,year} = carDetails
+let{color, make, model, year} = carDetails
 
 console.log(`the car is a ${color} ${year}${model} ${make}`)
 
@@ -117,13 +117,19 @@ console.log(`the car is a ${color} ${year}${model} ${make}`)
 
 function greeting( obj ) {
   //Code Here
-  
+  let {firstName, lastName, title}= craig
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
 
+const craig = {
+  firstName: "Craig",
+  lastName: "Sanchez",
+   title: "Mr.",
+}
 
+console.log(greeting(craig))
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
@@ -136,8 +142,19 @@ function greeting( obj ) {
 */
 
 //Code Here
+function totalPopulation ( obj ) {
+  let {utah, califonia, texas, arizona} = totalPopulation2
+  return  utah + califonia + texas + arizona;
+  
+}
+ const totalPopulation2 = {
+  utah: 200,
+  califonia: 300,
+  texas: 600,
+  arizona: 400,
+ }
 
-
+console.log(totalPopulation(totalPopulation2))
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
