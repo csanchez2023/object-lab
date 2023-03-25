@@ -103,8 +103,9 @@ var carDetails = {
 */
 
 //Code Here
+let{color,make,model,year} = carDetails
 
-
+console.log(`the car is a ${color} ${year}${model} ${make}`)
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
