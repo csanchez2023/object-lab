@@ -105,7 +105,7 @@ var carDetails = {
 //Code Here
 let{color, make, model, year} = carDetails
 
-console.log(`the car is a ${color} ${year}${model} ${make}`)
+console.log(`the car is a ${color} ${year} ${model} ${make}`)
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -143,15 +143,15 @@ console.log(greeting(craig))
 
 //Code Here
 function totalPopulation ( obj ) {
-  let {utah, califonia, texas, arizona} = totalPopulation2
+  let {utah, califonia, texas, arizona} = obj;
   return  utah + califonia + texas + arizona;
-  
 }
+
  const totalPopulation2 = {
-  utah: 200,
-  califonia: 300,
-  texas: 600,
-  arizona: 400,
+  utah: 200000,
+  califonia: 3000000,
+  texas: 6000000,
+  arizona: 400000,
  }
 
 console.log(totalPopulation(totalPopulation2))
@@ -168,7 +168,22 @@ console.log(totalPopulation(totalPopulation2))
 
 //Code Here
 
+const ingredientsArr =[];
 
+function ingredients(obj){
+  let {carb, fat, protein} = obj;
+  ingredientsArr.push(carb, fat, protein);
+  return ingredientsArr;
+}
+const ingredients2 = {
+carb: "carbs",
+fat: "fat",
+protein: "protein",
+}
+
+// ingredientsArr.push(ingredients2)
+
+console.log(ingredients(ingredients2))
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -181,7 +196,7 @@ var user = {
   username: 'bryansmith33'
 };
 // Do not edit the code above.
-
+console.log(user)
 /*
   Let's say I, the user, decided to change my name and email address to the following:
   name -> 'Bryan G. Smith' and email -> 'bryan.smith@devmounta.in'.
@@ -190,7 +205,10 @@ var user = {
 
 //Code Here
 
+user.email = "bryan.smith@devmouta.in"
+user.name = "Bryan G. Smith"
 
+console.log(user)
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
   Using the user object above, delete the users age off of the object.
@@ -198,7 +216,9 @@ var user = {
 
 //Code Here
 
+delete user.age
 
+console.log(user)
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
   Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
@@ -207,7 +227,17 @@ var user = {
 */
 
 //Code here
-
+class Cat {
+  constructor(name, age, color){
+  this.name = name;
+  this.age = age;
+  this.color = color;
+  }
+}
+let fluffy = new Cat("Fluffy", 4, "brown");
+let kilo = new Cat ( "kilo", 7, "black")
+console.log(fluffy.name);
+console.log(kilo.name)
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
@@ -219,6 +249,21 @@ var user = {
 */
 
 //Code here
+class Wizard {
+  constructor ( name, age, favoriteSpell){
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;  
+  };
+  
+  castSpell(name, favoriteSpell){
+   return `${name} has cast the spell ${favoriteSpell}`;
+  };
+}
+
+let gandolf = new Wizard("Gandolf", 487, "you shall not pass");
+
+console.log(gandolf.castSpell(gandolf.name, gandolf.favoriteSpell));
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -245,7 +290,25 @@ var user = {
 
 //Code Here
 
-  
+class Phone{ 
+  constructor (brand, model, storage, color, price){
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+  sell(brand, model,){
+    this.sold = true;
+    console.log(`${this.brand}, ${this.model}, has been sold.`); 
+  }
+  changePrice(newprice){
+    console.log(this.price - 100 )
+  }
+
+}
+
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -258,6 +321,12 @@ var user = {
 
 //Code Here
 
+let iphone = new Phone( "apple", "iphone 13", 120, "green", 1320);
+let samsung  = new Phone( "Samsung", "galaxy s 22", 256, "black", 1299);
+let pixel = new Phone("Google", "Pixel 7", 256, "Snow", 899);
+
+iphone.sell()
+samsung.sell()
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -266,7 +335,7 @@ var user = {
 */ 
 
 //Code Here 
-
+console.log(iphone.changePrice())
 
 /*
   Now call the sell method on one of your other phone objects
