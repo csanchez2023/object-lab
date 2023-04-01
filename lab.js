@@ -304,7 +304,8 @@ class Phone{
     console.log(`${this.brand}, ${this.model}, has been sold.`); 
   }
   changePrice(newprice){
-    console.log(this.price - 100 )
+  
+    return `${this.brand}, ${this.model}, "is now " ${this.price - 100}`
   }
 
 }
@@ -322,7 +323,7 @@ class Phone{
 //Code Here
 
 let iphone = new Phone( "apple", "iphone 13", 120, "green", 1320);
-let samsung  = new Phone( "Samsung", "galaxy s 22", 256, "black", 1299);
+let samsung  = new Phone( "Samsung", "galaxy  S22", 256, "black", 1299);
 let pixel = new Phone("Google", "Pixel 7", 256, "Snow", 899);
 
 iphone.sell()
@@ -345,6 +346,8 @@ console.log(iphone.changePrice())
 
 //Code Here 
 
+console.log(iphone.sell())
+
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
@@ -364,7 +367,9 @@ const colors = {
 
 //Code Here 
 
+const colorsCopy = {...colors}
 
+console.log(colorsCopy)
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
